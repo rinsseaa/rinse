@@ -1,0 +1,135 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Web Layout</title>
+    <style>
+* { box-sizing: border-box; 
+}
+        header {
+            background-color: pink;
+            padding: 5px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }ul.nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: blue;
+    }
+
+    ul.nav li a {
+        display: block;
+        color: #f1f1f1;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul.nav li a:hover {
+        background-color: pink;
+        color: black;
+    }
+
+    .navside {
+        float: left;
+        width: 30%;
+        height: 300px;
+        background: #ccc;
+        padding: 20px;
+    }
+    
+    . container {
+       flex: 1;
+       display: flex;   
+       height:100%
+    }
+
+    .navside ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navside ul li a {
+        display: block;
+        padding: 10px 0;
+        color: black;
+        text-decoration: none;
+    }
+
+    .navside ul li a:hover {
+        background: #ddd;
+    }
+
+    footer {
+        background-color: pink;
+        padding: 5px;
+        text-align: center;
+        color: white;
+        clear: both;
+    }
+    main#content {
+    flex:1;
+    padding: 20px;
+    background: #f8f8f8
+    overflow-y: auto;
+    }
+
+</style>
+
+</head><body>
+    <header>
+        <h2>SDIHS</h2>
+        <h3 style="font-size:18px;">Santo Domingo Integrated High School</h3>
+    </header><ul class="nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">First Quarter</a></li>
+    <li><a href="#">Second Quarter</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+
+<section class="navside">
+    <ul>
+        <li><a href="#">School Profile</a></li>
+        <li><a href="#">SHS</a></li>
+        <li><a href="#">JHS</a></li>
+    </ul>
+</section>
+
+<head>
+    <style>
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<script>
+ function loadContent(section) {
+   const content = document getElementById('content');
+ 
+   if (section === 'School Profile') {
+      content.innerHTML = <h2>Mission</h2><p>Magbigay ng isang lipunan na may pagkakapantay-pantay, katarungan, at pagkakaisa, kung saan ang bawat Pilipino ay may pagkakataon na umunlad at magkaroon ng magandang buhay. Magbigay ng isang ekonomiya na may paglago, pag-unlad, at pagkakapantay-pantay, kung saan ang bawat Pilipino ay may trabaho, may kita, at may magandang buhay.</p> ;
+}
+
+    if (section === 'SHS') {
+       content.innerHTML = <h2>SHS</h2><br><h3>Women</h3><br><p>Ofelia Franco</p><br><p>Marineth Pulido</p><br><p>Joyce Caranay</p><br><h3>Men</h3><br><p>Joseph Trajano</p> ;
+}
+
+}
+</script>
+
+</body>
+
+<footer>
+    <p>rinsegenelie@gmail.com | 09946094042</p>
+</footer>
+
+</body>
+</html>
