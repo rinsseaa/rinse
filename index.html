@@ -1,135 +1,178 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
     <title>Web Layout</title>
     <style>
-* { box-sizing: border-box; 
-}
+        * { box-sizing: border-box; }
+
         header {
-            background-color: pink;
+            background-color: grey;
             padding: 5px;
             text-align: center;
             font-size: 35px;
             color: white;
-        }ul.nav {
-        display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: blue;
-    }
+        }
 
-    ul.nav li a {
-        display: block;
-        color: #f1f1f1;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
+        ul.nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
 
-    ul.nav li a:hover {
-        background-color: pink;
-        color: black;
-    }
+        ul.nav li a {
+            display: block;
+            color: #f1f1f1;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-    .navside {
-        float: left;
-        width: 30%;
-        height: 300px;
-        background: #ccc;
-        padding: 20px;
-    }
-    
-    . container {
-       flex: 1;
-       display: flex;   
-       height:100%
-    }
+        ul.nav li a:hover {
+            background-color: yellow;
+            color: black;
+        }
 
-    .navside ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
+        .container {
+            display: flex;
+            height: 400px;
+        }
 
-    .navside ul li a {
-        display: block;
-        padding: 10px 0;
-        color: black;
-        text-decoration: none;
-    }
-
-    .navside ul li a:hover {
-        background: #ddd;
-    }
-
-    footer {
-        background-color: pink;
-        padding: 5px;
-        text-align: center;
-        color: white;
-        clear: both;
-    }
-    main#content {
-    flex:1;
-    padding: 20px;
-    background: #f8f8f8
-    overflow-y: auto;
-    }
-
-</style>
-
-</head><body>
-    <header>
-        <h2>SDIHS</h2>
-        <h3 style="font-size:18px;">Santo Domingo Integrated High School</h3>
-    </header><ul class="nav">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">First Quarter</a></li>
-    <li><a href="#">Second Quarter</a></li>
-    <li><a href="#">About</a></li>
-</ul>
-
-<section class="navside">
-    <ul>
-        <li><a href="#">School Profile</a></li>
-        <li><a href="#">SHS</a></li>
-        <li><a href="#">JHS</a></li>
-    </ul>
-</section>
-
-<head>
-    <style>
-        article {
-            float: left;
+        .navside {
+            width: 30%;
+            background: #ccc;
             padding: 20px;
-            width: 70%;
-            background-color: #f1f1f1;
-            height: 300px;
+        }
+
+        .navside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navside ul li a {
+            display: block;
+            padding: 10px 0;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .navside ul li a:hover {
+            background: #ddd;
+        }
+
+        main#content {
+            flex: 1;
+            padding: 20px;
+            background: #f8f8f8;
+            overflow-y: auto;
+        }
+
+        li a, dropbtn {
+            display: inbline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+       
+        }
+
+        li a: hover, dropdown: hover .dropbtn {
+        background-color: lightgray;
+      
+        }
+       
+        . dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+        
+        .dropdown-content a: hover {background-color: lightgray;}
+        .dropdown: hover . dropdown-content {
+        display: block;
+        }
+        
+            footer {
+            background-color: grey;
+            padding: 5px;
+            text-align: center;
+            color: white;
         }
     </style>
 </head>
-
 <body>
 
+<header>
+    <h2>SDIHS</h2>
+    <h3 style="font-size:18px;">Santo Domingo Integrated High School</h3>
+</header>
+
+<ul class="nav">
+    <li><a href="eportfolio.html">Home</a></li>
+    <li><a href="Q1OUTPUTS.html">First Quarter</a></li>
+    <li><a href="Q2OUTPUTS.html">Second Quarter</a></li>
+    <li><a href=" https://www.facebook.com/share/17Lr15Ldsc">About</a></li>
+</ul>
+
+<div class="container">
+    <section class="navside">
+        <ul>
+            <li><a onclick="loadContent('School Profile')">School Profile</a></li>
+            <li><a onclick="loadContent('SHS')">SHS</a></li>
+            <li><a onclick="loadContent('JHS')">JHS</a></li>
+        </ul>
+    </section>
+
+    <main id="content">
+        <h2>Welcome!</h2>
+        <p>Select a section from the left.</p>
+    </main>
+</div>
+
+<footer>
+    <p>rinsegenelie@gmail.com | 09683750042</p>
+</footer>
+
 <script>
- function loadContent(section) {
-   const content = document getElementById('content');
- 
-   if (section === 'School Profile') {
-      content.innerHTML = <h2>Mission</h2><p>Magbigay ng isang lipunan na may pagkakapantay-pantay, katarungan, at pagkakaisa, kung saan ang bawat Pilipino ay may pagkakataon na umunlad at magkaroon ng magandang buhay. Magbigay ng isang ekonomiya na may paglago, pag-unlad, at pagkakapantay-pantay, kung saan ang bawat Pilipino ay may trabaho, may kita, at may magandang buhay.</p> ;
-}
+function loadContent(section) {
+    const content = document.getElementById('content');
+
+    if (section === 'School Profile') {
+        content.innerHTML = `
+            <h2>Mission</h2>
+            <p>Magbigay ng isang lipunan na may pagkakapantay-pantay, katarungan, at pagkakaisa...</p>
+        `;
+    }
 
     if (section === 'SHS') {
-       content.innerHTML = <h2>SHS</h2><br><h3>Women</h3><br><p>Ofelia Franco</p><br><p>Marineth Pulido</p><br><p>Joyce Caranay</p><br><h3>Men</h3><br><p>Joseph Trajano</p> ;
-}
+        content.innerHTML = `
+            <h2>SHS</h2>
+            <h3>Women</h3>
+            <p>Ofelia Franco</p>
+            <p>Marineth Pulido</p>
+            <p>Joyce Caranay</p>
+
+            <h3>Men</h3>
+            <p>Joseph Trajano</p>
+        `;
+    }
+
+    if (section === 'JHS') {
+        content.innerHTML = `
+            <h2>JHS</h2>
+            <a href="eportfolio.html">Abion, Rinse 10 - Kanlaon</a></p>
+            <p>Blanco, Jazztine 10 - Mayon.</p>
+       
+ `;
+    }
+
+
 
 }
 </script>
-
-</body>
-
-<footer>
-    <p>rinsegenelie@gmail.com | 09946094042</p>
-</footer>
 
 </body>
 </html>
